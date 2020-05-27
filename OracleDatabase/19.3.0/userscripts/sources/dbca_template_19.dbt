@@ -1,0 +1,650 @@
+<DatabaseTemplate name="dbca template 2020-01-21 01-53-04PM" description="" version="19.0.0.0.0">
+   <CommonAttributes>
+      <option name="OMS" value="false" includeInPDBs="false"/>
+      <option name="JSERVER" value="true" includeInPDBs="true"/>
+      <option name="SPATIAL" value="false" includeInPDBs="false"/>
+      <option name="IMEDIA" value="false" includeInPDBs="false"/>
+      <option name="ORACLE_TEXT" value="false" includeInPDBs="false"/>
+      <option name="SAMPLE_SCHEMA" value="false" includeInPDBs="false"/>
+      <option name="CWMLITE" value="false" includeInPDBs="false"/>
+      <option name="APEX" value="false" includeInPDBs="false"/>
+      <option name="DV" value="false" includeInPDBs="false"/>
+      <option name="NET_EXTENSIONS" value="false" includeInPDBs="false"/>
+   </CommonAttributes>
+   <Variables/>
+   <CustomScripts Execute="false"/>
+   <InitParamAttributes>
+      <InitParams>
+         <initParam name="db_name" value="P4DEV12CLIN"/>
+         <initParam name="db_domain" value="P4DEV12CLIN"/>
+         <initParam name="session_cached_cursors" value="200"/>
+         <initParam name="os_authent_prefix" value=""/>
+         <initParam name="remote_os_authent" value="TRUE"/>
+         <initParam name="dispatchers" value="(PROTOCOL=TCP) (SERVICE={SID}XDB)"/>
+         <initParam name="audit_file_dest" value="/opt/oracle/oradata/P4DEV12CLIN/ADMIN/ADUMP"/>
+         <initParam name="compatible" value="19.0.0"/>
+         <initParam name="cursor_sharing" value="FORCE"/>
+         <initParam name="remote_login_passwordfile" value="EXCLUSIVE"/>
+         <initParam name="job_queue_processes" value="65"/>
+         <initParam name="dml_locks" value="1000000"/>
+         <initParam name="processes" value="300"/>
+         <initParam name="deferred_segment_creation" value="FALSE"/>
+         <initParam name="log_archive_dest_state_1" value="enable"/>
+         <initParam name="db_big_table_cache_percent_target" value="75"/>
+         <initParam name="parallel_degree_policy" value="MANUAL"/>
+         <initParam name="undo_tablespace" value="UNDOTBS1"/>
+         <initParam name="core_dump_dest" value="/opt/oracle/oradata/P4DEV12CLIN/ADMIN/CDUMP"/>
+         <initParam name="cell_offload_plan_display" value="AUTO"/>
+         <initParam name="background_core_dump" value="partial"/>
+         <initParam name="control_files" value=""/>
+         <initParam name="diagnostic_dest" value="/opt/oracle/"/>
+         <initParam name="use_large_pages" value="TRUE"/>
+         <initParam name="nls_territory" value="GERMANY"/>
+         <initParam name="statistics_level" value="TYPICAL"/>
+         <initParam name="sessions" value="472"/>
+         <initParam name="db_block_size" value="8192"/>
+         <initParam name="open_cursors" value="300"/>
+         <initParam name="nls_language" value="GERMAN"/>
+         <initParam name="db_writer_processes" value="4"/>
+         <initParam name="temp_undo_enabled" value="TRUE"/>
+         <initParam name="_fix_control" value="24761824:ON"/>
+         <initParam name="_optimizer_aggr_groupby_elim" value="FALSE"/>
+         <initParam name="_rowsets_enabled" value="FALSE"/>
+         <initParam name="sec_case_sensitive_logon" value="FALSE"/>
+      </InitParams>
+      <MiscParams>
+         <customSGA>true</customSGA>
+         <characterSet>WE8ISO8859P15</characterSet>
+         <nationalCharacterSet>AL16UTF16</nationalCharacterSet>
+         <archiveLogMode>false</archiveLogMode>
+         <initParamFileName>/opt/oracle/product/19c/dbhome_1/init.ora</initParamFileName>
+      </MiscParams>
+      <SPfile useSPFile="true">/opt/oracle/product/19c/dbhome_1/spfile{SID}.ora</SPfile>
+   </InitParamAttributes>
+   <StorageAttributes>
+      <ControlfileAttributes id="Controlfile">
+         <maxDatafiles>100</maxDatafiles>
+         <maxLogfiles>16</maxLogfiles>
+         <maxLogMembers>3</maxLogMembers>
+         <maxLogHistory>4674</maxLogHistory>
+         <maxInstances>8</maxInstances>
+         <image name="CONTROL01.CTL" filepath="/opt/oracle/oradata/P4DEV12CLIN/CONTROLFILES/"/>
+         <image name="CONTROL02.CTL" filepath="/opt/oracle/oradata/P4DEV12CLIN/CONTROLFILES/"/>
+         <image name="CONTROL03.CTL" filepath="/opt/oracle/oradata/P4DEV12CLIN/CONTROLFILES/"/>
+      </ControlfileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_ACT.DBF" con_id="0">
+         <tablespace>PHOENIX_ACT</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="KB">8</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT1_01.DBF" con_id="0">
+         <tablespace>PHOENIX_DAT1</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT2_01.DBF" con_id="0">
+         <tablespace>PHOENIX_DAT2</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT3_01.DBF" con_id="0">
+         <tablespace>PHOENIX_DAT3</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DIC_01.DBF" con_id="0">
+         <tablespace>PHOENIX_DIC</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_HIST.DBF" con_id="0">
+         <tablespace>PHOENIX_HIST</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_IDX1_01.DBF" con_id="0">
+         <tablespace>PHOENIX_IDX1</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_PRT.DBF" con_id="0">
+         <tablespace>PHOENIX_PRT</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_PWP.DBF" con_id="0">
+         <tablespace>PHOENIX_PWP</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_SST.DBF" con_id="0">
+         <tablespace>PHOENIX_SST</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_TMP1_02.DBF" con_id="0">
+         <tablespace>PHOENIX_TMP1</tablespace>
+         <temporary>true</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/SYSAUX01.DBF" con_id="0">
+         <tablespace>SYSAUX</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/SYSTEM01.DBF" con_id="0">
+         <tablespace>SYSTEM</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/TEMP01.DBF" con_id="0">
+         <tablespace>TEMP</tablespace>
+         <temporary>true</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/TEMP_1.DBF" con_id="0">
+         <tablespace>TEMP</tablespace>
+         <temporary>true</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/UNDOTBS01.DBF" con_id="0">
+         <tablespace>UNDOTBS1</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <DatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/USERS01.DBF" con_id="0">
+         <tablespace>USERS</tablespace>
+         <temporary>false</temporary>
+         <online>true</online>
+         <status>0</status>
+         <size unit="MB">10</size>
+         <reuse>true</reuse>
+         <autoExtend>true</autoExtend>
+         <increment unit="MB">5</increment>
+         <maxSize unit="MB">32767</maxSize>
+      </DatafileAttributes>
+      <TablespaceAttributes id="PHOENIX_ACT" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_ACT.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_DAT1" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT1_01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_DAT2" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT2_01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_DAT3" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DAT3_01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_DIC" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_DIC_01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_HIST" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>true</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_HIST.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_IDX1" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_IDX1_01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_PRT" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_PRT.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_PWP" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_PWP.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_SST" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>true</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_SST.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="PHOENIX_TMP1" con_id="0">
+         <temporary>true</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>2</allocation>
+         <uniAllocSize unit="KB">1024</uniAllocSize>
+         <initSize unit="KB">1024</initSize>
+         <increment unit="KB">1024</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>-1</maxExtends>
+         <minExtendsSize unit="KB">1024</minExtendsSize>
+         <logging>false</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>false</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/PHOENIX_TMP1_02.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="SYSAUX" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/SYSAUX01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="SYSTEM" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>false</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/SYSTEM01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="TEMP" con_id="0">
+         <temporary>true</temporary>
+         <defaultTemp>true</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>2</allocation>
+         <uniAllocSize unit="KB">1024</uniAllocSize>
+         <initSize unit="KB">1024</initSize>
+         <increment unit="KB">1024</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>-1</maxExtends>
+         <minExtendsSize unit="KB">1024</minExtendsSize>
+         <logging>false</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>false</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/TEMP01.DBF"/>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/TEMP_1.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="UNDOTBS1" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>true</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>false</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/UNDOTBS01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <TablespaceAttributes id="USERS" con_id="0">
+         <temporary>false</temporary>
+         <defaultTemp>false</defaultTemp>
+         <undo>false</undo>
+         <local>true</local>
+         <blockSize>8192</blockSize>
+         <allocation>1</allocation>
+         <uniAllocSize unit="KB">-1</uniAllocSize>
+         <initSize unit="KB">64</initSize>
+         <increment unit="KB">0</increment>
+         <incrementPercent>0</incrementPercent>
+         <minExtends>1</minExtends>
+         <maxExtends>2147483645</maxExtends>
+         <minExtendsSize unit="KB">64</minExtendsSize>
+         <logging>true</logging>
+         <recoverable>false</recoverable>
+         <maxFreeSpace>0</maxFreeSpace>
+         <autoSegmentMgmt>true</autoSegmentMgmt>
+         <bigfile>false</bigfile>
+         <datafilesList>
+            <TablespaceDatafileAttributes id="/opt/oracle/oradata/P4DEV12CLIN/TABLESPACES/USERS01.DBF"/>
+         </datafilesList>
+      </TablespaceAttributes>
+      <RedoLogGroupAttributes id="1">
+         <reuse>false</reuse>
+         <fileSize unit="KB">51200</fileSize>
+         <Thread>1</Thread>
+         <member ordinal="0" memberName="REDO01.LOG" filepath="/opt/oracle/oradata/P4DEV12CLIN/REDOLOG/"/>
+      </RedoLogGroupAttributes>
+      <RedoLogGroupAttributes id="2">
+         <reuse>false</reuse>
+         <fileSize unit="KB">51200</fileSize>
+         <Thread>1</Thread>
+         <member ordinal="0" memberName="REDO02.LOG" filepath="/opt/oracle/oradata/P4DEV12CLIN/REDOLOG/"/>
+      </RedoLogGroupAttributes>
+      <RedoLogGroupAttributes id="3">
+         <reuse>false</reuse>
+         <fileSize unit="KB">51200</fileSize>
+         <Thread>1</Thread>
+         <member ordinal="0" memberName="REDO03.LOG" filepath="/opt/oracle/oradata/P4DEV12CLIN/REDOLOG/"/>
+      </RedoLogGroupAttributes>
+   </StorageAttributes>
+</DatabaseTemplate>

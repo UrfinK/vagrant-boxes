@@ -10,9 +10,9 @@
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 # 
 
-ORACLE_SYS_PWD="Operator12!"
+ORACLE_SYS_PWD="operator"
 ORACLE_PWD="operator"
-ORACLE_SID="`grep $ORACLE_HOME /etc/oratab | cut -d: -f1`"
+ORACLE_SID="`grep $ORACLE_HOME /etc/oratab | cut -d: -f1 |head -1`"
 ORACLE_PDB="`ls -dl $ORACLE_BASE/oradata/$ORACLE_SID/*/ | grep -v pdbseed | awk '{print $9}' | cut -d/ -f6`"
 ORAENV_ASK=NO
 source oraenv
