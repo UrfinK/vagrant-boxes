@@ -21,10 +21,6 @@
 #    scoter     03/19/19 - Creation
 #
 
-# remove fake entry to hostname pointing to 127.0.0.1
-sed -i -e "/$HOSTNAME/d" /etc/hosts
-echo "10.0.2.15 $HOSTNAME" >> /etc/hosts
-
 # set environment variables
 echo "export ORACLE_BASE=/opt/oracle" >> /home/oracle/.bashrc && \
 echo "export ORACLE_HOME=/opt/oracle/product/18c/dbhomeXE" >> /home/oracle/.bashrc && \
@@ -68,7 +64,7 @@ chmod o+r /opt/oracle/product/18c/dbhomeXE/network/admin/tnsnames.ora
 # add tnsnames.ora entry for PDB
 echo 'XEPDB1 =
   (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = oracle-18c-apex)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
       (SERVICE_NAME = XEPDB1)
@@ -77,9 +73,6 @@ echo 'XEPDB1 =
 ' >> /opt/oracle/product/18c/dbhomeXE/network/admin/tnsnames.ora
 
 echo 'INSTALLER: TNS entry added'
-
-#clean up temporary entry in /etc/hosts
-sed -i -e "s/10.0.2.15/127.0.0.1/" /etc/hosts
 
 # configure systemd to start oracle instance on startup
 systemctl daemon-reload
