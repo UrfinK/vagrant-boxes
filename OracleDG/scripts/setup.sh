@@ -94,7 +94,7 @@ export NODE1_PUBLIC_IP=$NODE1_PUBLIC_IP
 export NODE2_PUBLIC_IP=$NODE2_PUBLIC_IP
 #----------------------------------------------------------
 #----------------------------------------------------------
-export DOMAIN_NAME=${DOMAIN_NAME}
+export DOMAIN_NAME=${DOMAIN}
 
 export NODE1_HOSTNAME=${VM1_NAME}
 export NODE2_HOSTNAME=${VM2_NAME}
@@ -116,6 +116,7 @@ export DB_HOME=${DB_HOME}
 export DB_NAME=${DB_NAME}
 export PDB_NAME=${PDB_NAME}
 export CDB=${CDB}
+export ADG=${ADG}
 #----------------------------------------------------------
 #----------------------------------------------------------
 export INFO='\033[0;34mINFO: \033[0m'

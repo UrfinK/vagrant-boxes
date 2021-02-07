@@ -111,10 +111,26 @@ exit;
 EOF
 sleep 5
 
+if [ "${ADG}" == "true" ]
+then
+echo "-----------------------------------------------------------------"
+echo -e "${INFO}`date +%F' '%T`: Setup standby env as ADG"
+echo "-----------------------------------------------------------------"
+${DB_HOME}/bin/sqlplus / as sysdba <<EOF
+STARTUP MOUNT FORCE;
+ALTER DATABASE OPEN READ ONLY;
+ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT FROM SESSION;
+exit;
+EOF
+else
+echo "-----------------------------------------------------------------"
+echo -e "${INFO}`date +%F' '%T`: Setup standby env"
+echo "-----------------------------------------------------------------"
 ${DB_HOME}/bin/sqlplus / as sysdba <<EOF
 STARTUP MOUNT FORCE;
 exit;
 EOF
+fi
 
 sleep 60
 ${DB_HOME}/bin/dgmgrl sys/${SYS_PASSWORD}@${DB_NAME} <<EOF

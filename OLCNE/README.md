@@ -1,4 +1,4 @@
-# Vagrant project to set up Oracle Linux Cloud Native Environment on Oracle Linux 7
+# Vagrant project to set up Oracle Linux Cloud Native Environment on Oracle Linux 8
 
 This Vagrant project will deploy and configure the following components:
 
@@ -16,7 +16,7 @@ Environment Platform Agent installed and configured to communicate with the
 Platform API Server on the operator node.
 
 The installation includes the Kubernetes module for Oracle Linux Cloud
-Native Environment which deploys Kubernetes 1.17.4 configured to use
+Native Environment which deploys Kubernetes 1.18.10 configured to use
 the CRI-O runtime interface. Two runtime engines are installed, runc and
 Kata Containers.
 
@@ -47,6 +47,16 @@ the `vagrant` user). E.g.:
 - `kubectl cluster-info`
 - `kubectl get nodes`
 - `kubectl get pods --namespace=kube-system`
+
+## Accessing the Kubernetes Dashboard
+
+By default, the Kubernetes Dashboord does not allow non-HTTPS connections from
+any source except `localhost`/`127.0.0.1`. If you want to be able to connect
+to the Dashboard from a browser on your Vagrant host, you will need to set
+`BIND_PROXY` to `true` in your `.env.local` file.
+
+To access the Kubernetes Dashboard, remember to use `localhost` or `127.0.0.1`
+in the URL, i.e. <http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/>.
 
 ## About the Vagrantfile
 
@@ -98,16 +108,11 @@ operator node -- default is to install the operator components on the (first)
 master node.
 - `MULTI_MASTER` (default: `false`): multi-master setup. Deploy 3 masters in
 HA mode.
-__Note__: in multi-master mode, to circumvent a networking limitation, the
-default route on master nodes needs to be on the private network interface
-(`eth1`). To achieve this we use a non-master node as default gateway.
-When `STANDALONE_OPERATOR` is `true`, we use the operator as gateway,
-otherwise we take the first worker node (`worker1`). The gateway node must be
-running or you masters will loose Internet connectivity!
 - `NB_WORKERS` (default: 2): number of worker nodes to provision.
 At least one worker node is required.
 - `BIND_PROXY` (default: `false`): bind the kubectl proxy port (8001) from the
-(first) master to the Vagrant host.
+(first) master to the Vagrant host. This is required if you want to access the
+Kubernetes Dashboard from a browser on your host.
 __Note__: you only need this if you want to expose the kubectl proxy to other
 hosts in your network.
 
@@ -138,7 +143,7 @@ Danger zone!
 Mainly used for development.
 
 - The following parameters can be set to use specific component version:
-`OLCNE_VERSION`, `K8S_VERSION`, `NGINX_IMAGE`.
+`OLCNE_VERSION`, `NGINX_IMAGE`.
 - `NB_MASTERS` (default: none): override number of masters to deploy.
 
 ## Optional plugins
@@ -171,4 +176,4 @@ Please provide feedback of any kind via GitHub issues on this repository.
 
 ## Contributing
 
-See [CONTRIBUTING](./CONTRIBUTING.md) for details.
+See [CONTRIBUTING](../CONTRIBUTING.md) for details.
